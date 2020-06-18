@@ -1,0 +1,10 @@
+.DS_Store
+.env
+node_modules
+dist
+**tar.gz
+**.ndjson
+production.tar.gz
+staging.tar.gz
+*-*-*-prod.tar.gz
+.idea
