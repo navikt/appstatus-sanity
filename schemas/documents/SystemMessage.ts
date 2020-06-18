@@ -2,29 +2,24 @@ import { localeContentValidation } from '../../utils/contentValidation';
 import { toPlainText, shortenText } from '../../utils/previewUtils';
 import { getLocaleContent } from '../../utils/getLocaleContent';
 import { defaultLocale } from '../locales';
-
-const MESSAGE_TYPE = {
-    info: 'info',
-    alert: 'alert',
-    unavailable: 'unavailable',
-};
+import { MESSAGE_TYPE } from '../../types';
 
 const Message = {
-    title: 'Systemmelding',
+    title: 'System message',
     name: 'systemMessage',
     type: 'document',
     id: 'systemMessage',
     fieldsets: [
         {
             name: 'internal',
-            title: 'Internt',
+            title: 'Setup',
             options: {
                 collapsible: false,
             },
         },
         {
             name: 'public',
-            title: 'Innhold',
+            title: 'Content',
             options: {
                 collapsible: false,
             },
@@ -32,55 +27,55 @@ const Message = {
     ],
     fields: [
         {
-            title: 'Navn',
+            title: 'Name',
             name: 'name',
             type: 'string',
             validation: (Rule) => Rule.required(),
             fieldset: 'internal',
         },
         {
-            title: 'Meldingstype',
+            title: 'Message type',
             name: 'messageType',
             type: 'string',
             fieldset: 'internal',
             options: {
                 layout: 'radio',
                 list: [
-                    { title: 'Informasjon', value: MESSAGE_TYPE.info },
-                    { title: 'Ustabilitet', value: MESSAGE_TYPE.alert },
-                    { title: 'Utilgjengelig', value: MESSAGE_TYPE.unavailable },
+                    { title: 'Information', value: MESSAGE_TYPE.info },
+                    { title: 'Instability', value: MESSAGE_TYPE.alert },
+                    { title: 'Unavailable', value: MESSAGE_TYPE.unavailable },
                 ],
             },
             validation: (Rule) => Rule.required(),
         },
         {
-            title: 'Hvor skal meldingen vises?',
+            title: 'Where to include the message?',
             name: 'application',
             type: 'array',
             fieldset: 'internal',
             of: [{ type: 'reference', to: [{ type: 'application' }] }],
         },
         {
-            title: 'Vis melding i alle applikasjoner',
+            title: 'Show in all applications',
             name: 'isGlobal',
             type: 'boolean',
             fieldset: 'internal',
         },
         {
-            title: 'Synlig fra',
+            title: 'Visible from',
             name: 'starts',
             type: 'datetime',
             fieldset: 'internal',
             validation: (Rule) => Rule.required(),
         },
         {
-            title: 'Synlig til',
+            title: 'Visible until',
             name: 'stops',
             type: 'datetime',
             fieldset: 'internal',
         },
         {
-            title: 'Melding',
+            title: 'Message',
             name: 'content',
             type: 'localeRichText',
             validation: localeContentValidation,
@@ -98,7 +93,7 @@ const Message = {
 
             return {
                 title,
-                subtitle: `[${props.style}] ${shortenText(subtitle) || 'Uten tittel'}`,
+                subtitle: `[${props.style}] ${shortenText(subtitle) || 'No tittel'}`,
             };
         },
     },

@@ -1,32 +1,58 @@
 const Application = {
-    title: 'Applikasjon',
+    title: 'Applications',
     name: 'application',
     type: 'document',
-
+    fieldsets: [
+        {
+            name: 'config',
+            title: 'Name/Id/Team',
+            options: {
+                collapsible: true,
+            },
+        },
+        {
+            name: 'status',
+            title: 'Overall status',
+        },
+        {
+            name: 'schedule',
+            title: 'Schedule',
+        },
+    ],
     fields: [
         {
-            title: 'Navn',
+            title: 'Name',
             name: 'name',
             type: 'string',
+            fieldset: 'config',
+            validation: (Rule) => Rule.required(),
         },
         {
             title: 'ID',
             name: 'key',
             type: 'string',
+            fieldset: 'config',
+            validation: (Rule) => Rule.required(),
         },
         {
             title: 'Team',
             name: 'team',
             type: 'reference',
             to: [{ type: 'team' }],
+            fieldset: 'config',
+            validation: (Rule) => Rule.required(),
         },
         {
-            title: 'Er tilgjengelig',
+            title: 'Is available',
             name: 'available',
             type: 'boolean',
-            options: {
-                layout: 'checkbox',
-            },
+            fieldset: 'status',
+        },
+        {
+            title: 'Schedule',
+            name: 'schedule',
+            type: 'array',
+            of: [{ type: 'scheduleItem' }],
         },
     ],
     preview: {
@@ -34,18 +60,18 @@ const Application = {
         prepare(props) {
             return {
                 title: props.title,
-                subtitle: props.available === false ? 'Ikke tilgjengelig' : undefined,
+                subtitle: props.available === false ? 'Not available' : undefined,
             };
         },
     },
     orderings: [
         {
-            title: 'navn',
+            title: 'name',
             name: 'name',
             by: [{ field: 'name', direction: 'asc' }],
         },
         {
-            title: 'tilgjengelig',
+            title: 'availability',
             name: 'available',
             by: [{ field: 'available', direction: 'asc' }],
         },
