@@ -6,9 +6,9 @@ const LocaleRichText = {
     fieldsets: [
         {
             name: 'translations',
-            title: 'Oversettelser',
-            options: { collapsible: true }
-        }
+            title: 'Translations',
+            options: { collapsible: true },
+        },
     ],
     fields: supportedLocales.map((lang) => ({
         title: lang.title,
@@ -28,17 +28,17 @@ const LocaleRichText = {
                             fields: [
                                 {
                                     name: 'url',
-                                    type: 'url'
-                                }
-                            ]
-                        }
-                    ]
+                                    type: 'url',
+                                },
+                            ],
+                        },
+                    ],
                 },
-                lists: [{ title: 'Bullet', value: 'bullet' }]
-            }
+                lists: [{ title: 'Bullet', value: 'bullet' }],
+            },
         ],
-        fieldset: lang.isDefault ? null : 'translations'
-    }))
+        fieldset: lang.isDefault ? null : 'translations',
+    })),
 };
 
 export default LocaleRichText;

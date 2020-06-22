@@ -5,17 +5,17 @@ const OptionalLocaleTitle = {
     type: 'object',
     fieldsets: [
         {
-            title: 'Oversettelser',
+            title: 'Translations',
             name: 'translations',
-            options: { collapsible: true }
-        }
+            options: { collapsible: true },
+        },
     ],
     fields: supportedLocales.map((lang) => ({
         title: lang.title,
         name: lang.id,
         type: 'string',
-        fieldset: 'translations'
-    }))
+        fieldset: 'translations',
+    })),
 };
 
 export default OptionalLocaleTitle;

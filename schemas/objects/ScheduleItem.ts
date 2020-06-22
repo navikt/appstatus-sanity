@@ -18,7 +18,6 @@ const ScheduleItem = {
             title: 'Starts at',
             name: 'starts',
             type: 'datetime',
-            validation: (Rule) => Rule.required(),
         },
         {
             title: 'Ends at',
@@ -32,23 +31,9 @@ const ScheduleItem = {
             validation: (Rule) => Rule.required(),
         },
         {
-            title: 'Message (optional)',
+            title: 'Message',
             name: 'message',
-            type: 'localeRichText',
-        },
-        {
-            title: 'Message type',
-            description: 'Relates to alertStripe from nav-frontend; info, warning, error',
-            name: 'messageType',
-            type: 'string',
-            options: {
-                layout: 'radio',
-                list: [
-                    { title: 'Information (default)', value: MESSAGE_TYPE.info },
-                    { title: 'Instability', value: MESSAGE_TYPE.alert },
-                    { title: 'Unavailable', value: MESSAGE_TYPE.unavailable },
-                ],
-            },
+            type: 'statusMessage',
         },
     ],
     preview: {

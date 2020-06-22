@@ -6,18 +6,18 @@ const LocaleSimpleText = {
     type: 'object',
     fieldsets: [
         {
-            title: 'Oversettelser',
+            title: 'Translations',
             name: 'translations',
-            options: { collapsible: true }
-        }
+            options: { collapsible: true },
+        },
     ],
     fields: supportedLocales.map((lang) => ({
         title: lang.title,
         name: lang.id,
         type: 'text',
         rows: 5,
-        fieldset: lang.isDefault ? null : 'translations'
-    }))
+        fieldset: lang.isDefault ? null : 'translations',
+    })),
 };
 
 export default LocaleSimpleText;
