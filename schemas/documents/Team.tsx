@@ -40,10 +40,6 @@ const Team = {
             validation: (Rule: { max: (num: number) => any }) => Rule.max(1),
         },
     ],
-    initialValue: {
-        messageType: 'info',
-        applicationStatus: 'normal',
-    },
     preview: {
         select: {
             title: 'name',

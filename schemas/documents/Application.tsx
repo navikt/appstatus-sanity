@@ -52,10 +52,10 @@ const Application = {
             title: 'Application status',
             name: 'applicationStatus',
             type: 'applicationStatus',
-            validation: (Rule: { required: () => any }) => Rule.required(),
         },
         {
             title: 'Message',
+            description: 'This will always override team messages',
             name: 'message',
             type: 'array',
             of: [{ type: 'statusMessage' }],
@@ -83,9 +83,6 @@ const Application = {
                 media: <StatusIcon status={getStatusIconStatusFromApplicationStatus(status)} />,
             };
         },
-    },
-    initialValue: {
-        applicationStatus: APPLICATION_STATUS.team,
     },
     orderings: [
         {

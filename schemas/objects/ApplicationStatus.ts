@@ -18,6 +18,7 @@ const ApplicationStatus = {
                     { title: 'Unavailable', value: APPLICATION_STATUS.unavailable },
                 ],
             },
+            validation: (Rule: { required: () => any }) => Rule.required(),
         },
     ],
 };
