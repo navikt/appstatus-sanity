@@ -18,11 +18,6 @@ const TeamApplicationStatus = {
                 ],
             },
         },
-        {
-            title: 'Message',
-            name: 'message',
-            type: 'localeRichText',
-        },
     ],
 };
 

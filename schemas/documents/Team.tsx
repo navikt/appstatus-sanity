@@ -32,6 +32,13 @@ const Team = {
             name: 'teamApplicationStatus',
             type: 'teamApplicationStatus',
         },
+        {
+            title: 'Message',
+            name: 'message',
+            type: 'array',
+            of: [{ type: 'statusMessage' }],
+            validation: (Rule: { max: (num: number) => any }) => Rule.max(1),
+        },
     ],
     initialValue: {
         messageType: 'info',

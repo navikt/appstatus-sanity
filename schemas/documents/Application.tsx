@@ -20,10 +20,10 @@ const Application = {
             name: 'status',
             title: 'Overall status',
         },
-        {
-            name: 'schedule',
-            title: 'Schedule',
-        },
+        // {
+        //     name: 'schedule',
+        //     title: 'Schedule',
+        // },
     ],
     fields: [
         {
@@ -55,10 +55,11 @@ const Application = {
             validation: (Rule: { required: () => any }) => Rule.required(),
         },
         {
-            title: 'Schedule',
-            name: 'schedule',
+            title: 'Message',
+            name: 'message',
             type: 'array',
-            of: [{ type: 'scheduleItem' }],
+            of: [{ type: 'statusMessage' }],
+            validation: (Rule: { max: (num: number) => any }) => Rule.max(1),
         },
     ],
     preview: {
@@ -74,9 +75,6 @@ const Application = {
             const { status = APPLICATION_STATUS.normal } = useTeamAppStatus
                 ? props.teamAppStatus
                 : props.applicationStatus;
-
-            console.log(props, useTeamAppStatus, status);
-
             return {
                 title: props.title,
                 subtitle: `${getStatusSubTitleFromApplicationStatus(status)}${

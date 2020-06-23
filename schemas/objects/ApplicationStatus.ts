@@ -19,11 +19,6 @@ const ApplicationStatus = {
                 ],
             },
         },
-        {
-            title: 'Message',
-            name: 'message',
-            type: 'localeRichText',
-        },
     ],
 };
 

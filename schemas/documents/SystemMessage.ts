@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { localeContentValidation } from '../../utils/contentValidation';
 import { toPlainText, shortenText } from '../../utils/previewUtils';
 import { getLocaleContent } from '../../utils/getLocaleContent';
@@ -30,7 +31,7 @@ const Message = {
             title: 'Name',
             name: 'name',
             type: 'string',
-            validation: (Rule) => Rule.required(),
+            validation: (Rule: { required: () => any }) => Rule.required(),
             fieldset: 'internal',
         },
         {
@@ -42,11 +43,11 @@ const Message = {
                 layout: 'radio',
                 list: [
                     { title: 'Information', value: MESSAGE_TYPE.info },
-                    { title: 'Instability', value: MESSAGE_TYPE.alert },
-                    { title: 'Unavailable', value: MESSAGE_TYPE.unavailable },
+                    { title: 'Warning', value: MESSAGE_TYPE.warning },
+                    { title: 'Error', value: MESSAGE_TYPE.error },
                 ],
             },
-            validation: (Rule) => Rule.required(),
+            validation: (Rule: { required: () => any }) => Rule.required(),
         },
         {
             title: 'Where to include the message?',
@@ -66,7 +67,7 @@ const Message = {
             name: 'starts',
             type: 'datetime',
             fieldset: 'internal',
-            validation: (Rule) => Rule.required(),
+            validation: (Rule: { required: () => any }) => Rule.required(),
         },
         {
             title: 'Visible until',
@@ -87,7 +88,7 @@ const Message = {
             style: 'style',
             content: 'content',
         },
-        prepare(props) {
+        prepare(props: { name: any; content: any; style: any }) {
             const title = `${props.name}`;
             const subtitle = toPlainText(getLocaleContent(props.content, defaultLocale));
 

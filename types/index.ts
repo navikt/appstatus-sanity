@@ -1,7 +1,7 @@
 export const MESSAGE_TYPE = {
     info: 'info',
-    alert: 'alert',
-    unavailable: 'unavailable',
+    warning: 'warning',
+    error: 'error',
 };
 
 export enum APPLICATION_STATUS {
