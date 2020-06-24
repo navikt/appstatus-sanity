@@ -21,7 +21,7 @@ const Message = {
             options: {
                 layout: 'radio',
                 list: [
-                    { title: 'Success (default)', value: MESSAGE_TYPE.info },
+                    { title: 'Information (default)', value: MESSAGE_TYPE.info },
                     { title: 'Warning', value: MESSAGE_TYPE.warning },
                     { title: 'Error', value: MESSAGE_TYPE.error },
                 ],
