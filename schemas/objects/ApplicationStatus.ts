@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { APPLICATION_STATUS } from '../../types';
 
 const ApplicationStatus = {
@@ -14,7 +15,6 @@ const ApplicationStatus = {
                 list: [
                     { title: 'Inherit (same as team)', value: APPLICATION_STATUS.team },
                     { title: 'Normal', value: APPLICATION_STATUS.normal },
-                    { title: 'Unstable', value: APPLICATION_STATUS.unstable },
                     { title: 'Unavailable', value: APPLICATION_STATUS.unavailable },
                 ],
             },

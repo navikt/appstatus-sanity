@@ -5,8 +5,7 @@ export const MESSAGE_TYPE = {
 };
 
 export enum APPLICATION_STATUS {
-    team = 'team',
+    team = 'team' /** Inherit status from team */,
     normal = 'normal',
-    unstable = 'unstable',
     unavailable = 'unavailable',
 }
