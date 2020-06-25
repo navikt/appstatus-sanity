@@ -40,6 +40,10 @@
     },
     "parts": [
         {
+            "name": "part:@sanity/desk-tool/structure",
+            "path": "./config/deskStructure.js"
+        },
+        {
             "name": "part:@sanity/base/schema",
             "path": "./schemas/schema"
         }

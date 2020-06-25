@@ -8,7 +8,7 @@ import {
 import { APPLICATION_STATUS } from '../../types';
 
 const Application = {
-    title: 'Applications',
+    title: 'Application',
     name: 'application',
     type: 'document',
     fieldsets: [
