@@ -19,7 +19,7 @@
         },
         {
             "name": "staging",
-            "title": "Staging",
+            "title": "Test/Q",
             "api": {
                 "projectId": "ryujtq87",
                 "dataset": "staging"
