@@ -33,6 +33,12 @@ const Team = {
             type: 'teamApplicationStatus',
         },
         {
+            title: 'Listen for sanity changes',
+            name: 'liveUpdate',
+            type: 'boolean',
+        },
+
+        {
             title: 'Message',
             name: 'message',
             type: 'array',

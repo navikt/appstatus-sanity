@@ -54,6 +54,11 @@ const Application = {
             type: 'applicationStatus',
         },
         {
+            title: 'Listen for sanity changes',
+            name: 'liveUpdate',
+            type: 'boolean',
+        },
+        {
             title: 'Message',
             description: 'This will always override team messages',
             name: 'message',
