@@ -1,5 +1,4 @@
 import moment from 'moment';
-import { MESSAGE_TYPE } from '../../types';
 
 const formatTime = (dateString: string): string => moment(dateString).format('DD. MMM. yyyy hh:mm');
 
@@ -12,7 +11,7 @@ const ScheduleItem = {
             title: 'Internal name',
             name: 'title',
             type: 'string',
-            validation: (Rule) => Rule.required(),
+            validation: (Rule: any) => Rule.required(),
         },
         {
             title: 'Starts at',
@@ -28,7 +27,7 @@ const ScheduleItem = {
             title: 'Disable application',
             name: 'disableApplication',
             type: 'boolean',
-            validation: (Rule) => Rule.required(),
+            validation: (Rule: any) => Rule.required(),
         },
         {
             title: 'Message',
@@ -42,7 +41,7 @@ const ScheduleItem = {
             starts: 'starts',
             ends: 'ends',
         },
-        prepare(props) {
+        prepare(props: any) {
             const subtitle = `${formatTime(props.starts)} - ${props.ends ? formatTime(props.ends) : 'No end-time set'}`;
             return {
                 title: props.title,
