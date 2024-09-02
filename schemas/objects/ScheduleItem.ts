@@ -1,6 +1,6 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 
-const formatTime = (dateString: string): string => moment(dateString).format('DD. MMM. yyyy hh:mm');
+const formatTime = (dateString: string): string => dayjs(dateString).format('DD. MMM. yyyy hh:mm');
 
 const ScheduleItem = {
     title: 'Schedule item',
