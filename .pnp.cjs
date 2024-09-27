@@ -12022,10 +12022,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["rollup", [\
-      ["npm:3.29.4", {\
-        "packageLocation": "../../.yarn/berry/cache/rollup-npm-3.29.4-5e5e5f2087-10c0.zip/node_modules/rollup/",\
+      ["npm:3.29.5", {\
+        "packageLocation": "../../.yarn/berry/cache/rollup-npm-3.29.5-4622371c71-10c0.zip/node_modules/rollup/",\
         "packageDependencies": [\
-          ["rollup", "npm:3.29.4"],\
+          ["rollup", "npm:3.29.5"],\
           ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"]\
         ],\
         "linkType": "HARD"\
@@ -13855,7 +13855,7 @@ const RAW_RUNTIME_STATE =
           ["less", null],\
           ["lightningcss", null],\
           ["postcss", "npm:8.4.43"],\
-          ["rollup", "npm:3.29.4"],\
+          ["rollup", "npm:3.29.5"],\
           ["sass", null],\
           ["stylus", null],\
           ["sugarss", null],\
